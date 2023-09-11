@@ -163,10 +163,10 @@ public abstract class SearchBaseActor extends AbstractActor {
             res.setResponseCode(ResponseCode.SERVER_ERROR);
         }
     }
-    
+
     protected String setErrMessage(Throwable e){
-		if (e instanceof MiddlewareException)
-        		return e.getMessage();
+        if (e instanceof MiddlewareException)
+            return e.getMessage();
         else {
             if (e.getSuppressed().length > 0) {
                 return e.getSuppressed()[0].getMessage();

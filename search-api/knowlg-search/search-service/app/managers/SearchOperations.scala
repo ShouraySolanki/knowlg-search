@@ -1,0 +1,6 @@
+package managers
+
+object SearchOperations extends Enumeration {
+  type SearchOperations = Value
+  val INDEX_SEARCH, SEARCH_OPERATION_AND, LANGUAGE_SEARCH, METRICS, COUNT, GROUP_SEARCH_RESULT_BY_OBJECTTYPE, MULTI_LANGUAGE_WORD_SEARCH, MULTI_LANGUAGE_SYNSET_SEARCH, HEALTH = Value
+}

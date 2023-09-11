@@ -60,14 +60,14 @@ public class SearchManager {
         Future<Response> getRes = getSearchResponse(request, actor);
         return getRes;
     }
-    
+
     protected Future<Response> getSearchResponse(Request request, ActorRef actor) {
         Future<Response> res = null;
         try {
             long startTime = System.currentTimeMillis();
             request.getContext().put("start_time", startTime);
             perfLogger.info(request.getContext().get("scenario_name") + ","
-                    + request.getContext().get("request_id") 
+                    + request.getContext().get("request_id")
                     + "," + request.getOperation() + ",STARTTIME," + startTime);
             res = ask(actor, request, WAIT_TIMEOUT)
                     .map(new Mapper<Object, Future<Response>>() {
